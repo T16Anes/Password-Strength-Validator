@@ -1,0 +1,49 @@
+Enter password (or 'q' to quit):  
+Score: '0/6'   [!] Very Weak - do not use this password.
+Missing requirements:
+  - At least 8 characters        (current: 1)
+  - At least one uppercase letter
+  - At least one lowercase letter
+  - At least one digit
+  - At least one special character (!#$&*+-=?^_)
+  - Do not use spaces
+Enter password (or 'q' to quit): a 
+Score: '1/6'   [!] Very Weak - do not use this password.
+Missing requirements:
+  - At least 8 characters        (current: 2)
+  - At least one uppercase letter
+  - At least one digit
+  - At least one special character (!#$&*+-=?^_)
+  - Do not use spaces
+Enter password (or 'q' to quit): a
+Score: '2/6'   [!] Weak - significant improvements needed.
+Missing requirements:
+  - At least 8 characters        (current: 1)
+  - At least one uppercase letter
+  - At least one digit
+  - At least one special character (!#$&*+-=?^_)
+Enter password (or 'q' to quit): Ha
+Score: '3/6'   [ ] Fair - getting there, but not safe yet.
+Missing requirements:
+  - At least 8 characters        (current: 2)
+  - At least one digit
+  - At least one special character (!#$&*+-=?^_)
+Enter password (or 'q' to quit): djuejair
+Score: '3/6'   [ ] Fair - getting there, but not safe yet.
+Missing requirements:
+  - At least one uppercase letter
+  - At least one digit
+  - At least one special character (!#$&*+-=?^_)
+Enter password (or 'q' to quit): djsej$ir
+Score: '4/6'   [+] Good - a few tweaks and you are set.
+Missing requirements:
+  - At least one uppercase letter
+  - At least one digit
+Enter password (or 'q' to quit): djHej$ir
+Score: '5/6'   [!] Strong - almost perfect.
+Missing requirements:
+  - At least one digit
+Enter password (or 'q' to quit): djHe8$ir
+Score: '6/6'   [!] Very Strong - excellent password.
+All requirements satisfied.
+Enter password (or 'q' to quit): q
