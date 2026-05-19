@@ -22,6 +22,7 @@ Give seggetions to enhance strength.
 
 ## How to run
 > **windows:** .\program.exe
+
 > **linux:** ./program
 
 ## Results summary
