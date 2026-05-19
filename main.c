@@ -5,7 +5,11 @@ const int MIN = 8; // Minimum password caracters number
 const char CYAN[8] = "\x1b[35m"; // Cyan color
 const char RESET[7] = "\x1b[0m"; // reset color(to white)
 
-// Search for val in a string
+/* 
+This function search for a character val in a given string str.
+It get string(str[]), caracter(val)
+Return 1 if it exist , 0 otherwise.
+*/
 int searchTable(char str[], char val)
 {
     for(int i = 0;i<strlen(str);i++)
@@ -15,8 +19,12 @@ int searchTable(char str[], char val)
     return 0;
 }
 
-
-// validate requirements 
+/* This function help validate each requirement ( it used to eleminate repetition and make code more clean) */
+/*
+It search each character of the password[] in the set of characters table[]
+It get string(p[]), string(table[])
+Return 1 if a character in the password exist in table[], 0 if no character of the password exist in table[].
+*/
 int validator(char p[], char table[])
 {
     for (int i=0;i<strlen(p);i++)
@@ -26,55 +34,89 @@ int validator(char p[], char table[])
     return 0;
 }
 
-// check length
+/*
+Check pasword length requirement
+It git password(p[]) , intger(min)
+Return 1 if password length is greater or equal to min , 0 otherwise.
+*/
 int checkLength(char p[], int min)
 {
     if (strlen(p) >= min) return 1;
     else return 0;
 }
 
-// check uppercase
+/*
+Check if password has an uppercase
+It git password(p[])
+Return 1 if password has an uppercase, 0 otherwise.
+*/
 int hasUppercase(char p[])
 {
     char upper[26] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     return validator(p,upper);
 }
 
-// check lowercase
+/*
+Check if password has a lowercase
+It git password(p[])
+Return 1 if password has a lowercase, 0 otherwise.
+*/
 int hasLowercase(char p[])
 {
     char lower[26] = "abcdefghijklmnopqrstuvwxyz";
     return validator(p,lower);
 }
 
-// check digits
+/*
+Check if password has a digit
+It git password(p[])
+Return 1 if password has a digit, 0 otherwise.
+*/
 int hasDigit(char p[])
 {
     char digits[10] = "0123456789";
     return validator(p,digits);
 }
 
-// check special chars
+/*
+Check if passsword has a special character
+It git password(p[])
+Return 1 if password has a special chracter, 0 otherwise.
+*/
 int hasSpecialChar(char p[])
 {
     char special[20] = "!#$%&*+-=?^_";
     return validator(p,special);
 }
 
-// check spaces (not included)
+/*
+Check if password has no spaces
+It git password(p[])
+Return 1 if password has no spaces , 0 otherwhise.
+*/
 int hasNoSpace(char p[])
 {
     return !searchTable(p,' ');
 }
 
-// calculate strength
+/*
+Calculate password strength
+It git password(p[])
+call each validator and calculate score
+Return score.
+*/
 int calculateStrength(char p[])
 {
     int score = checkLength(p,8) + hasLowercase(p) + hasUppercase(p) + hasDigit(p) + hasSpecialChar(p) + hasNoSpace(p);
     return score;
 }
 
-// print feedback
+/*
+Print the feedback
+It git password(p[])
+Call each validator and calculateStrength
+Print the feedback
+*/
 void printFeedback(char p[])
 {
     int score = calculateStrength(p);
@@ -142,7 +184,8 @@ int main()
     {
         printFeedback(p);
         printf("Enter password (or %s'q'%s to quit): ",CYAN,RESET);
-        scanf("%[\n]",&h); // I used this scan to fix infinite loop problem(try comment it)
+        scanf("%[\n]",&h); // Try comment it
+		/* This scan is used to fix infinite loop cycle that happen because of new line character*/
         scanf("%[^\n]",p);
     }
 }
